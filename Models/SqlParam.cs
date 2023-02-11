@@ -45,6 +45,7 @@ public class SqlParam
     }
 
     public bool isClob { get; set; } = false;
+    public bool isBlob { get; set; } = false;
     public string name { get; private set; }
     public int size { get; set; }
     public object value { get; set; }

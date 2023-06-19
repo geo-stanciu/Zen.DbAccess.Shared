@@ -10,5 +10,5 @@ public enum DbModelSaveType
 {
     InsertUpdate = 0,
     InsertOnly,
-    InsertWithoutPrimaryKeyValueReturn
+    BulkInsertWithoutPrimaryKeyValueReturn
 }

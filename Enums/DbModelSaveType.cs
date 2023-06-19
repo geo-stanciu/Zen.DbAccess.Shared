@@ -9,5 +9,6 @@ namespace Zen.DbAccess.Shared.Enums;
 public enum DbModelSaveType
 {
     InsertUpdate = 0,
-    InsertOnly
+    InsertOnly,
+    InsertWithoutPrimaryKeyValueReturn
 }

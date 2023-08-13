@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <VersionPrefix>1.0.5.1-beta</VersionPrefix>
+    <VersionPrefix>1.0.4.1</VersionPrefix>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 

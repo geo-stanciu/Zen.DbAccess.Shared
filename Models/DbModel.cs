@@ -35,6 +35,11 @@ public class DbModel : JsonModel
     [DbModelPropertyIgnore]
     [Newtonsoft.Json.JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
+    public Dictionary<string, string>? dbModel_column_map { get; set; } = null;
+
+    [DbModelPropertyIgnore]
+    [Newtonsoft.Json.JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
     public string dbModel_pkName { get; set; } = string.Empty;
 
     [DbModelPropertyIgnore]

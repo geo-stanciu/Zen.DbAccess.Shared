@@ -25,25 +25,30 @@ public class DbModel : JsonModel
     [DbModelPropertyIgnore]
     [Newtonsoft.Json.JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
-    public PropertyInfo[]? dbModel_properties { get; set; } = null;
+    public HashSet<string>? dbModel_dbColumns { get; set; } = null;
 
     [DbModelPropertyIgnore]
     [Newtonsoft.Json.JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
-    public List<string>? dbModel_dbColumns { get; set; } = null;
+    public List<string>? dbModel_primaryKey_dbColumns { get; set; } = null;
 
     [DbModelPropertyIgnore]
     [Newtonsoft.Json.JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
-    public Dictionary<string, string>? dbModel_column_map { get; set; } = null;
+    public Dictionary<string, PropertyInfo>? dbModel_dbColumn_map { get; set; } = null;
 
     [DbModelPropertyIgnore]
     [Newtonsoft.Json.JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
-    public string dbModel_pkName { get; set; } = string.Empty;
+    public Dictionary<string, string>? dbModel_prop_map { get; set; } = null;
 
-    [DbModelPropertyIgnore]
-    [Newtonsoft.Json.JsonIgnore]
-    [System.Text.Json.Serialization.JsonIgnore]
-    public PropertyInfo? dbModel_primaryKey { get; set; } = null;
+    public void CopyDbModelPropsFrom(DbModel model)
+    {
+        dbModel_sql_update = model.dbModel_sql_update;
+        dbModel_sql_insert = model.dbModel_sql_insert;
+        dbModel_dbColumns = model.dbModel_dbColumns;
+        dbModel_primaryKey_dbColumns = model.dbModel_primaryKey_dbColumns;
+        dbModel_dbColumn_map = model.dbModel_dbColumn_map;
+        dbModel_prop_map = model.dbModel_prop_map;
+    }
 }

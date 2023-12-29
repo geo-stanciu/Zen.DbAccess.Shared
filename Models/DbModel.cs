@@ -15,6 +15,11 @@ public class DbModel : JsonModel
     [DbModelPropertyIgnore]
     [Newtonsoft.Json.JsonIgnore]
     [System.Text.Json.Serialization.JsonIgnore]
+    public DbSqlDeleteModel dbModel_sql_delete { get; set; } = new DbSqlDeleteModel();
+
+    [DbModelPropertyIgnore]
+    [Newtonsoft.Json.JsonIgnore]
+    [System.Text.Json.Serialization.JsonIgnore]
     public DbSqlUpdateModel dbModel_sql_update { get; set; } = new DbSqlUpdateModel();
 
     [DbModelPropertyIgnore]
@@ -44,6 +49,7 @@ public class DbModel : JsonModel
 
     public void CopyDbModelPropsFrom(DbModel model)
     {
+        dbModel_sql_delete = model.dbModel_sql_delete;
         dbModel_sql_update = model.dbModel_sql_update;
         dbModel_sql_insert = model.dbModel_sql_insert;
         dbModel_dbColumns = model.dbModel_dbColumns;
